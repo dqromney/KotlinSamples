@@ -3,6 +3,37 @@
  */
 package KotlinSamples.Functions
 
+fun main(args: Array<String>) {
+    // infix_functions()
+    extenstion_functions()
+}
+
+fun <T> ArrayList<T>.swap(index1:Int, index2:Int) {
+    val temp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = temp
+}
+
+fun Any?.print() {
+    if (this == null) println("object is null")
+    else println("object is ${this.toString()}")
+}
+
+val String?.empty : Boolean
+    get() = (this == null || this.length == 0)
+
+fun extenstion_functions() {
+    val mylist = arrayListOf(1,2,3)
+    mylist.swap(0,2)
+    println(mylist)
+
+    mylist.print()
+    val s:String? = null
+    s.print()
+
+    println(s.empty)
+}
+
 // Everything lives in a package, unless specified it goes to the default package
 // See Hello.kt for use
 // Unit is Kotlin's equivalent of void, it is optional
