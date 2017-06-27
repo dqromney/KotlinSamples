@@ -17,7 +17,34 @@ fun main(args: Array<String>) {
     // partitoning()
     // grouping()
     // sorting()
-    elementOperations()
+    // elementOperations()
+    setOperations()
+}
+
+fun setOperations() {
+    // set {1,1,1}  = {1} No duplicates
+    val word1 = "helloooo".toCharArray().toList()
+    val word2 = "help!".toCharArray().toList()
+
+    println("Distinct of $word1 is : ${word1.distinct()}")  // [h,e,l,o]
+
+    // Common letters in words
+    println("Intersect of $word1 and $word2 is : ${word1.intersect(word2)}")  //  [h, e, l]
+
+    // Unique letters from both words
+    println("Union of $word1 and $word2 is : ${word1.union(word2)}") // [h, e, l, o, p, !]
+
+    // Letters unique in word1
+    println("Subtraction of $word1 and $word2 is : ${word1.subtract(word2)}") // [o]
+
+    val people = listOf(
+            Person("John", 20),
+            Person("Jill", 20),
+            Person("John", 35)
+    )
+
+    println("\ndistinct by name : ${people.distinctBy { it.name }}")
+    println("distinct by age : ${people.distinctBy { it.age }}")
 }
 
 fun elementOperations() {
