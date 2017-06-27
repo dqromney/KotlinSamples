@@ -3,14 +3,6 @@
  */
 package KotlinSamples.Lambdas
 
-fun <T> max(collection: Collection<T>, less: (T, T) -> Boolean): T? {
-    var max: T? = null
-    for (x in collection)
-        if (max == null || less(max, x))
-            max = x
-    return max
-}
-
 class Average {
     public operator fun invoke(vararg values: Double): Double {
         var sum = 0.0
@@ -55,3 +47,13 @@ fun main(args: Array<String>) {
     val two = "two"
     println("I have 2 ${two()} apples")
 }
+
+fun <T> max(collection: Collection<T>, less: (T, T) -> Boolean): T? {
+    var max: T? = null
+    for (x in collection)
+        if (max == null || less(max, x))
+            max = x
+    return max
+}
+
+

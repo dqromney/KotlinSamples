@@ -31,6 +31,12 @@ class Person {
     }
 }
 
+fun main(args: Array<String>) {
+    // lazy()
+    multifunctionDevice()
+}
+
+
 fun lazy() {
     var p = Person()
     p.name = "David"
@@ -95,7 +101,3 @@ fun multifunctionDevice() {
 
 }
 
-fun main(args: Array<String>) {
-    // lazy()
-    multifunctionDevice()
-}
