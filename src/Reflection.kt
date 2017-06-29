@@ -3,11 +3,6 @@
  */
 package KotlinSamples.Reflection
 
-//import KotlinSamples.ClassReferences.Base
-//import KotlinSamples.ClassReferences.Derived
-//import KotlinSamples.ClassReferences.Person
-//import KotlinSamples.ClassReferences.process
-//import KotlinSamples.FunctionReferences.isOdd
 import java.lang.reflect.Field
 import java.lang.reflect.Method
 import kotlin.reflect.*
