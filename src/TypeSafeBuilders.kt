@@ -58,13 +58,13 @@ class HTML() : TagWithText("html") {
     fun body(init: Body.() -> Unit) = initTag(Body(), init)
 }
 
-class Head(): TagWithText("head") {
+class Head() : TagWithText("head") {
     fun title(init: Title.() -> Unit) = initTag(Title(), init)
 }
 
-class Title(): TagWithText("title")
+class Title() : TagWithText("title")
 
-abstract class BodyTag(name: String): TagWithText(name) {
+abstract class BodyTag(name: String) : TagWithText(name) {
     fun b(init: B.() -> Unit) = initTag(B(), init)
     fun p(init: P.() -> Unit) = initTag(P(), init)
     fun h1(init: H1.() -> Unit) = initTag(H1(), init)
@@ -74,11 +74,11 @@ abstract class BodyTag(name: String): TagWithText(name) {
     }
 }
 
-class Body(): BodyTag("body")
-class B(): BodyTag("b")
-class P(): BodyTag("p")
-class H1(): BodyTag("h1")
-class A(): BodyTag("a") {
+class Body() : BodyTag("body")
+class B() : BodyTag("b")
+class P() : BodyTag("p")
+class H1() : BodyTag("h1")
+class A() : BodyTag("a") {
     var href: String
         get() = attributes["href"]!!
         set(value) {
@@ -86,11 +86,12 @@ class A(): BodyTag("a") {
         }
 }
 
-fun html(init: HTML.() -> Unit) : HTML {
+fun html(init: HTML.() -> Unit): HTML {
     val html = HTML()
     html.init()
     return html
 }
+
 fun main(args: Array<String>) {
     println(render(args))
 }
